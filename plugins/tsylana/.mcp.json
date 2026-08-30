@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "tsylana": {
+      "type": "http",
+      "url": "https://mcp.tsylana.com/mcp",
+      "oauth_resource": "https://mcp.tsylana.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "tsylana",
+  "interface": {
+    "displayName": "Tsylana"
+  },
+  "plugins": [
+    {
+      "name": "tsylana",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tsylana"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data & Analytics"
+    }
+  ]
+}
