@@ -12,7 +12,8 @@ Tsylana's hosted, read-only MCP server using client-managed OAuth.
 
 - [`plugins/`](plugins/): public plugin bundles:
   - [`tsylana/`](plugins/tsylana/): hosted Tsylana MCP integration
-- [`ARCHITECTURE.md`](ARCHITECTURE.md): distribution, runtime, and security boundaries
+- [`ARCHITECTURE.md`](ARCHITECTURE.md): distribution, runtime, and security
+  boundaries
 - [`AGENTS.md`](AGENTS.md): repository operating contract
 
 ## Getting Started

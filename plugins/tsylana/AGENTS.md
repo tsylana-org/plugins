@@ -12,7 +12,8 @@ It contains no local runtime or skills.
 - [`.codex-plugin/`](.codex-plugin/): Codex presentation metadata
 - [`.mcp.json`](.mcp.json): Codex HTTP and OAuth resource registration
 - [`assets/`](assets/): public plugin branding
-- [`README.md`](README.md): human-facing plugin overview and installation guidance
+- [`README.md`](README.md): human-facing plugin overview and installation
+  guidance
 
 ## Tech Stack
 
@@ -24,8 +25,19 @@ It contains no local runtime or skills.
 
 - JSON: `jq empty plugin.json mcp.json .codex-plugin/plugin.json .mcp.json`
 - Identity: `jq -e '.name == "tsylana" and .version == "0.0.0"' plugin.json`
-- Portable MCP: `jq -e '.mcpServers.tsylana.type == "streamable-http" and .mcpServers.tsylana.url == "https://mcp.tsylana.com/mcp"' mcp.json`
-- Codex OAuth resource: `jq -e '.mcpServers.tsylana.oauth_resource == "https://mcp.tsylana.com/mcp"' .mcp.json`
+- Portable MCP:
+
+  ```sh
+  jq -e '.mcpServers.tsylana.type == "streamable-http" and
+    .mcpServers.tsylana.url == "https://mcp.tsylana.com/mcp"' mcp.json
+  ```
+
+- Codex OAuth resource:
+
+  ```sh
+  jq -e '.mcpServers.tsylana.oauth_resource ==
+    "https://mcp.tsylana.com/mcp"' .mcp.json
+  ```
 
 ## Verification
 
@@ -35,5 +47,7 @@ It contains no local runtime or skills.
 ## Guardrails
 
 - Keep the plugin public, read-only, and remote-only.
-- Keep `mcp.tsylana.com` as the protected resource; discover authorization at `auth.tsylana.com` through MCP OAuth metadata.
-- Never add tokens, client secrets, private skills, customer data, or hosted connector source.
+- Keep `mcp.tsylana.com` as the protected resource; discover authorization at
+  `auth.tsylana.com` through MCP OAuth metadata.
+- Never add tokens, client secrets, private skills, customer data, or hosted
+  connector source.
