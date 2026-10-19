@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/v17.11.2/schemas/config.json",
+  "release-type": "simple",
+  "initial-version": "0.0.0",
+  "skip-changelog": true,
+  "include-component-in-tag": false,
+  "include-v-in-tag": true,
+  "packages": {
+    ".": {
+      "package-name": "tsylana",
+      "extra-files": [
+        "plugins/tsylana/plugin.json",
+        "plugins/tsylana/.codex-plugin/plugin.json"
+      ]
+    }
+  }
+}

@@ -24,7 +24,14 @@ It contains no local runtime or skills.
 ## Commands
 
 - JSON: `jq empty plugin.json mcp.json .codex-plugin/plugin.json .mcp.json`
-- Identity: `jq -e '.name == "tsylana" and .version == "0.0.0"' plugin.json`
+- Identity and release version:
+
+  ```sh
+  jq -e --slurpfile manifest ../../.release-please-manifest.json \
+    '.name == "tsylana" and .version == $manifest[0]["."]' \
+    plugin.json .codex-plugin/plugin.json
+  ```
+
 - Portable MCP:
 
   ```sh
