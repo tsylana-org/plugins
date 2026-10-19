@@ -30,6 +30,6 @@ implementation, private skills, or customer data.
   codex plugin add tsylana@tsylana
   ```
 
-On first connection, the MCP client discovers the authorization server from
-the MCP protected-resource metadata and opens the Tsylana sign-in flow hosted
-at `auth.tsylana.com`.
+On first connection, the MCP client discovers the authorization server from the
+MCP protected-resource metadata and opens the Tsylana sign-in flow hosted at
+`auth.tsylana.com`.

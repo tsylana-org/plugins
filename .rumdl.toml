@@ -1,0 +1,72 @@
+# Native Markdown policy, aligned with the engineering baseline.
+
+[global]
+extend-enable = [
+  "MD060",
+  "MD063",
+  "MD070",
+  "MD080",
+  "MD082",
+  "MD083",
+  "MD084",
+  "MD085",
+  "MD087",
+  "MD089",
+  "MD090",
+  "MD091",
+  "MD093",
+  "MD095"
+]
+unfixable = [ "MD070", "MD084" ]
+
+[MD003]
+style = "atx"
+
+[MD004]
+style = "dash"
+
+[MD013]
+reflow = true
+reflow-mode = "normalize"
+
+[MD029]
+style = "ordered"
+
+[MD035]
+style = "---"
+
+[MD046]
+style = "fenced"
+
+[MD048]
+style = "backtick"
+
+[MD049]
+style = "asterisk"
+
+[MD050]
+style = "asterisk"
+
+[MD055]
+style = "leading-and-trailing"
+
+[MD060]
+style = "compact"
+aligned-delimiter = true
+
+[MD076]
+style = "tight"
+allow-loose-continuation = true
+
+[MD077]
+style = "aligned"
+
+[MD082]
+allow-parent-headings = true
+
+[MD084]
+strict = false
+
+[per-file-ignores]
+# The PR body is a fragment with a reserved Notes heading.
+".github/PULL_REQUEST_TEMPLATE.md" = [ "MD041", "MD082" ]
