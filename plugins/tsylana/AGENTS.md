@@ -21,35 +21,10 @@ It contains no local runtime or skills.
 - **Protocol**: Model Context Protocol over Streamable HTTP
 - **Authentication**: OAuth
 
-## Commands
+## Checks
 
-- JSON: `jq empty plugin.json mcp.json .codex-plugin/plugin.json .mcp.json`
-- Identity and release version:
-
-  ```sh
-  jq -e --slurpfile manifest ../../.release-please-manifest.json \
-    '.name == "tsylana" and .version == $manifest[0]["."]' \
-    plugin.json .codex-plugin/plugin.json
-  ```
-
-- Portable MCP:
-
-  ```sh
-  jq -e '.mcpServers.tsylana.type == "streamable-http" and
-    .mcpServers.tsylana.url == "https://mcp.tsylana.com/mcp"' mcp.json
-  ```
-
-- Codex OAuth resource:
-
-  ```sh
-  jq -e '.mcpServers.tsylana.oauth_resource ==
-    "https://mcp.tsylana.com/mcp"' .mcp.json
-  ```
-
-## Verification
-
-- Run every metadata check and confirm referenced assets exist.
-- Validate portable and Codex metadata independently.
+For connection changes, check both client registrations against the hosted
+endpoint and OAuth resource.
 
 ## Guardrails
 

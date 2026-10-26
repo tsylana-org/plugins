@@ -9,39 +9,28 @@ public plugin code.
 ## Structure
 
 - [`plugins/`](plugins/): public plugin bundles:
-  - [`tsylana/`](plugins/tsylana/): hosted Tsylana MCP integration; follow its
-    local `AGENTS.md`
+  - [`tsylana/`](plugins/tsylana/): hosted Tsylana MCP integration
+- [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json): public
+  plugin catalog
 - [`ARCHITECTURE.md`](ARCHITECTURE.md): distribution, runtime, and security
   boundaries
 - [`README.md`](README.md): human-facing repository overview
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): contribution, Git and style conventions
 
-## Commands
+## Checks
 
-- Catalog: `jq empty .agents/plugins/marketplace.json`
-- Plugin:
+Run `rumdl check .` from the repository root.
 
-  ```sh
-  jq empty plugins/tsylana/plugin.json plugins/tsylana/mcp.json \
-    plugins/tsylana/.codex-plugin/plugin.json plugins/tsylana/.mcp.json
-  ```
+To format affected files, use `rumdl check --fix <paths>`, inspect the diff, and
+rerun the check.
 
-- Markdown check (all tracked Markdown, including hidden paths):
+For metadata changes, verify catalog paths, matching manifest identities, and
+the shared release version.
 
-  ```sh
-  git ls-files -z -- '*.md' | xargs -0 uvx rumdl@latest check
-  ```
+## Work Tracking
 
-- Markdown fix (same scope):
-
-  ```sh
-  git ls-files -z -- '*.md' | xargs -0 uvx rumdl@latest check --fix
-  ```
-
-## Verification
-
-- Run the Markdown check.
-- Confirm catalog paths and plugin metadata references exist.
-- Follow the plugin's local verification guidance.
+- **Project:**
+  [Tsylana Apps & APIs](https://github.com/orgs/tsylana-org/projects/5)
 
 ## Guardrails
 
@@ -50,5 +39,7 @@ public plugin code.
   service source.
 - Keep `mcp.tsylana.com` as the protected MCP resource and discover
   authorization through its OAuth metadata.
+- Let the [release workflow](.github/workflows/release.yml) manage versions
+  through [release-please-config.json](release-please-config.json).
 - Publishing to an external marketplace or directory requires explicit human
   approval.
