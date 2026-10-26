@@ -60,8 +60,8 @@ marketplace or directory is a separate, explicitly approved operation.
 
 ## 7. Development & Testing Environment
 
-Validate the marketplace catalog and portable and Codex metadata independently
-with `jq`, then confirm every referenced path exists.
+GitHub Actions checks Markdown. Review metadata changes for client
+compatibility; hosted service tests belong in the service's owning repository.
 
 ## 8. References
 
